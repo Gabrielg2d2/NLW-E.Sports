@@ -7,9 +7,7 @@ function App() {
 
       <h1 className="text-6xl text-white font-black mt-20">
         Seu
-        <span className="mx-1 bg-nlw-gradient text-transparent bg-clip-text ">
-          duo
-        </span>
+        <span className="mx-1">duo</span>
         está aqui.
       </h1>
 
@@ -43,7 +41,7 @@ function App() {
           </div>
 
           <button className="py-3 px-4 bg-violet-500 hover:bg-violet-700 text-white rounded-md">
-            Pulicar anúncio
+            Publicar anúncio
           </button>
         </div>
       </div>
