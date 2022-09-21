@@ -19,7 +19,7 @@ app.get("/games/:id/ads", (request, response) => {
 app.get("/games/:id/discord", (request, response) => {
   const gameId = request.params.id;
 
-  return response.json([{id: gameId, title: `"Discord "${gameId}`, }]);
+  return response.json([{id: gameId, title: `Discord ${gameId}`, }]);
 });
 
 
