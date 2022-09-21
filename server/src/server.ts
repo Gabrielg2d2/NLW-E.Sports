@@ -2,25 +2,27 @@ import express from "express";
 
 const app = express();
 
-app.get("/", (req, res) => {
-  res.json([
-    {
-      id: 1,
-      name: "John Doe",
-    },
-    {
-      id: 2,
-      name: "Jane Doe2",
-    },
-    {
-      id: 3,
-      name: "Jane Doe3",
-    },
-    {
-      id: 4,
-      name: "Jane Doe4",
-    },
-  ]);
+app.get("/games", (request, response) => {
+  return response.json([]);
 });
+
+app.post("/ads", (request, response) => {
+  return response.status(201).json([]);
+});
+
+app.get("/games/:id/ads", (request, response) => {
+  const gameId = request.params.id;
+
+  return response.json([{id: gameId, title: "Anuncio 1", }]);
+});
+
+app.get("/games/:id/discord", (request, response) => {
+  const gameId = request.params.id;
+
+  return response.json([{id: gameId, title: `"Discord "${gameId}`, }]);
+});
+
+
+
 
 app.listen(3333);
