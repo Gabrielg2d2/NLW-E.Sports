@@ -1,14 +1,40 @@
 import express from "express";
+import cors from "cors";
 import { PrismaClient } from "@prisma/client";
+import { converteHourStringToMinutes } from "./utils/functions/converteHourStringToMinutes";
+import { convertMinutesToHourString } from "./utils/functions/convertMinutesToHourString";
 
 const app = express();
+
+app.use(express.json());
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+  })
+);
 
 const prisma = new PrismaClient({
   log: ["query", "info", "warn"],
 });
 
-app.post("/ads", (request, response) => {
-  return response.status(201).json([]);
+app.post("/games/:id/ads", async (request, response) => {
+  const gameId = request.params.id;
+  const body = request.body;
+
+  const ad = await prisma.ad.create({
+    data: {
+      gameId,
+      name: body.name,
+      yearsPlaying: body.yearsPlaying,
+      discord: body.discord,
+      weekDays: body.weekDays.join(","),
+      hourStart: converteHourStringToMinutes(body.hourStart),
+      hourEnd: converteHourStringToMinutes(body.hourEnd),
+      useVoiceChannel: body.useVoiceChannel,
+    },
+  });
+
+  return response.status(201).json(ad);
 });
 
 app.get("/games", async (request, response) => {
@@ -50,6 +76,8 @@ app.get("/games/:id/ads", async (request, response) => {
     return {
       ...ad,
       weekDays: ad.weekDays.split(","),
+      hourStart: convertMinutesToHourString(ad.hourStart),
+      hourEnd: convertMinutesToHourString(ad.hourEnd),
     };
   });
 
