@@ -1,20 +1,11 @@
-import { useEffect, useState } from "react";
 import { Banners } from "./components/Banners";
 import { Container } from "./components/Container";
 import { CreateAdBanner } from "./components/CreateAdBanner";
-import { GameBannerProps } from "./components/GameBanner";
 import { Header } from "./components/Header";
-import { getDataGames } from "./services/gets/games";
+import { useGetGames } from "./functions/hooks/useGetGames";
 
 function App() {
-  const [game, setGame] = useState<Array<GameBannerProps>>([]);
-
-  useEffect(() => {
-    (async () => {
-      const listGames = await getDataGames();
-      setGame(listGames);
-    })();
-  }, []);
+  const { game } = useGetGames();
 
   return (
     <Container>
