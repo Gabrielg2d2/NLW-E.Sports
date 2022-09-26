@@ -1,10 +1,4 @@
-export type GameBannerProps = {
-  bannerUrl: string;
-  title: string;
-  _count: {
-    ads: number;
-  };
-};
+import { GameBannerProps } from "../../../types/GameBannerProps";
 
 export function getDataGames() {
   try {

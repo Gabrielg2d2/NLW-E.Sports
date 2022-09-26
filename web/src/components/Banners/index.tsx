@@ -1,5 +1,5 @@
 import { GameBanner } from "../GameBanner";
-import { GameBannerProps } from "../../services/gets/games";
+import { GameBannerProps } from "../../types/GameBannerProps";
 
 export type BannerProps = {
   arrBanners: Array<GameBannerProps>;
