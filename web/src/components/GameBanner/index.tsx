@@ -1,4 +1,4 @@
-export type GameBannerProps = {
+type GameBannerProps = {
   bannerUrl: string;
   title: string;
   adsCount: number;
