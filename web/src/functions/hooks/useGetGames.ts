@@ -4,14 +4,14 @@ import { getDataGames, GameBannerProps } from "../../services/gets/games";
 type ArrGameBannerProps = Array<GameBannerProps>;
 
 export const useGetGames = () => {
-  const [game, setGame] = useState<ArrGameBannerProps>([]);
+  const [games, setGames] = useState<ArrGameBannerProps>([]);
 
   useEffect(() => {
     (async () => {
       const listGames: ArrGameBannerProps = await getDataGames();
-      setGame(listGames);
+      setGames(listGames);
     })();
   }, []);
 
-  return { game };
+  return { games };
 };

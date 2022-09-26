@@ -1,12 +1,5 @@
 import { GameBanner } from "../GameBanner";
-
-type GameBannerProps = {
-  bannerUrl: string;
-  title: string;
-  _count: {
-    ads: number;
-  };
-};
+import { GameBannerProps } from "../../services/gets/games";
 
 export type BannerProps = {
   arrBanners: Array<GameBannerProps>;

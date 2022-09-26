@@ -5,13 +5,13 @@ import { Header } from "./components/Header";
 import { useGetGames } from "./functions/hooks/useGetGames";
 
 function App() {
-  const { game } = useGetGames();
+  const { games } = useGetGames();
 
   return (
     <Container>
       <Header />
 
-      <Banners arrBanners={game} />
+      <Banners arrBanners={games} />
 
       <CreateAdBanner />
     </Container>
