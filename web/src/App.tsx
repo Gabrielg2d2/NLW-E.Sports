@@ -2,15 +2,18 @@ import { useEffect, useState } from "react";
 import { Banners } from "./components/Banners";
 import { Container } from "./components/Container";
 import { CreateAdBanner } from "./components/CreateAdBanner";
+import { GameBannerProps } from "./components/GameBanner";
 import { Header } from "./components/Header";
+import { getDataGames } from "./services/gets/games";
 
 function App() {
-  const [game, setGame] = useState([]);
+  const [game, setGame] = useState<Array<GameBannerProps>>([]);
 
   useEffect(() => {
-    fetch("http://localhost:3333/games")
-      .then((response) => response.json())
-      .then((data) => setGame(data));
+    (async () => {
+      const listGames = await getDataGames();
+      setGame(listGames);
+    })();
   }, []);
 
   return (

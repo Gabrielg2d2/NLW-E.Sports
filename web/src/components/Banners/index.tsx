@@ -1,6 +1,6 @@
 import { GameBannerProps, GameBanner } from "../GameBanner";
 
-type BannerProps = {
+export type BannerProps = {
   arrBanners: Array<GameBannerProps>;
 };
 
