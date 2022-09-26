@@ -5,3 +5,9 @@ export type GameBannerProps = {
     ads: number;
   };
 };
+
+type Props = Omit<GameBannerProps, "_count">;
+
+export type BannerProps = {
+  adsCount: number;
+} & Props;

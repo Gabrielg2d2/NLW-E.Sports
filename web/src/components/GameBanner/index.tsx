@@ -1,10 +1,4 @@
-import { GameBannerProps } from "../../types/GameBannerProps";
-
-type Props = Omit<GameBannerProps, "_count">;
-
-type BannerProps = {
-  adsCount: number;
-} & Props;
+import { GameBannerProps, BannerProps } from "../../types/GameBannerProps";
 
 export function GameBanner(props: BannerProps) {
   return (
