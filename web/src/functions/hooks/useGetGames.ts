@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { getDataGames } from "../../services/gets/games";
-import { GameBannerProps } from "../../components/GameBanner";
+import { getDataGames, GameBannerProps } from "../../services/gets/games";
 
 type ArrGameBannerProps = Array<GameBannerProps>;
 

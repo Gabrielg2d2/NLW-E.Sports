@@ -13,8 +13,6 @@ export type BannerProps = {
 };
 
 export function Banners(props: BannerProps) {
-  console.log("props: ", props);
-
   return (
     <div className="grid grid-cols-6 gap-6 mt-4">
       {props.arrBanners.map((item) => (
