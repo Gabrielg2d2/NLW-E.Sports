@@ -47,7 +47,7 @@ export function Form() {
               "Sábado",
             ].map((item) => (
               <button
-                title="Domingo"
+                title={item}
                 type="button"
                 className="w-[54px] h-10 rounded bg-zinc-900 hover:bg-neutral-900"
               >
