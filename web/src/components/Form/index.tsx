@@ -37,55 +37,23 @@ export function Form() {
         <div className="flex flex-col gap-2">
           <label htmlFor="weekDays">Quando costuma jogar?</label>
           <div className="flex space-x-1">
-            <button
-              title="Domingo"
-              type="button"
-              className="w-[54px] h-10 rounded bg-zinc-900 hover:bg-neutral-900"
-            >
-              Dom
-            </button>
-            <button
-              title="Segunda-feira"
-              type="button"
-              className="w-[54px] h-10 rounded bg-zinc-900 hover:bg-neutral-900"
-            >
-              Seg
-            </button>
-            <button
-              title="Terça-feira"
-              type="button"
-              className="w-[54px] h-10 rounded bg-zinc-900 hover:bg-neutral-900"
-            >
-              Ter
-            </button>
-            <button
-              title="Quarta-feira"
-              type="button"
-              className="w-[54px] h-10 rounded bg-zinc-900 hover:bg-neutral-900"
-            >
-              Qua
-            </button>
-            <button
-              title="Quinta-feira"
-              type="button"
-              className="w-[54px] h-10 rounded bg-zinc-900 hover:bg-neutral-900"
-            >
-              Qui
-            </button>
-            <button
-              title="Sexta-feira"
-              type="button"
-              className="w-[54px] h-10 rounded bg-zinc-900 hover:bg-neutral-900"
-            >
-              Sex
-            </button>
-            <button
-              title="Sábado"
-              type="button"
-              className="w-[54px] h-10 rounded bg-zinc-900 hover:bg-neutral-900"
-            >
-              Sab
-            </button>
+            {[
+              "Domingo",
+              "Segunda",
+              "Terça",
+              "Quarta",
+              "Quinta",
+              "Sexta",
+              "Sábado",
+            ].map((item) => (
+              <button
+                title="Domingo"
+                type="button"
+                className="w-[54px] h-10 rounded bg-zinc-900 hover:bg-neutral-900"
+              >
+                {item.slice(0, 3)}
+              </button>
+            ))}
           </div>
         </div>
       </div>
