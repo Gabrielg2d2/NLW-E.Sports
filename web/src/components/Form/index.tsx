@@ -1,5 +1,6 @@
 import { Input } from "./components/Input";
 import { GameController } from "phosphor-react";
+import * as Dialog from "@radix-ui/react-dialog";
 
 export function Form() {
   return (
@@ -72,12 +73,12 @@ export function Form() {
       </div>
 
       <footer className="mt-4 flex justify-end gap-4">
-        <button
+        <Dialog.Close
           type="button"
           className="bg-zinc-500 font-semibold rounded-md flex items-center gap-2 p-5 h-12 hover:bg-zinc-600"
         >
           Cancelar
-        </button>
+        </Dialog.Close>
         <button
           type="submit"
           className="bg-violet-500 font-semibold rounded-md flex items-center gap-2 p-5 h-12 hover:bg-purple-600"
